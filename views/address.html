@@ -25,7 +25,7 @@
         <p><strong>If you wish to verify that this address belongs to your
         wallet, you may run the following command:</strong></p>
         <div class="cmd"><pre>
-$ dcrctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet validateaddress {{ .User.UserPubKeyAddr }}
+$ hxctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet validateaddress {{ .User.UserPubKeyAddr }}
         </pre></div>
         <p><strong>In the result, you will see fields such as "ismine" and
         "account" if the address is present.</strong></p>
@@ -70,9 +70,9 @@ $ dcrctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet validateaddress 
         <p>The following is an example:</p>
 
         <div class="cmd"><pre>
-$ dcrctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet getnewaddress
+$ hxctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet getnewaddress
 {{ if eq .Network "mainnet"}}D{{end}}{{ if eq .Network "testnet"}}T{{end}}sExampleAddr1For2Demo3PurposesOnly
-$ dcrctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet validateaddress {{ if eq .Network "mainnet"}}D{{end}}{{ if eq .Network "testnet"}}T{{end}}sExampleAddr1For2Demo3PurposesOnly
+$ hxctl {{ if eq .Network "testnet"}}--testnet{{end}} --wallet validateaddress {{ if eq .Network "mainnet"}}D{{end}}{{ if eq .Network "testnet"}}T{{end}}sExampleAddr1For2Demo3PurposesOnly
 {
   "isvalid": true,
   "address": "{{ if eq .Network "mainnet"}}D{{end}}{{ if eq .Network "testnet"}}T{{end}}sExampleAddr1For2Demo3PurposesOnly",
