@@ -4,7 +4,10 @@
 [[projects]]
   branch = "master"
   name = "github.com/agl/ed25519"
-  packages = [".","edwards25519"]
+  packages = [
+    ".",
+    "edwards25519"
+  ]
   revision = "5312a61534124124185d41f09206b9fef1d88403"
 
 [[projects]]
@@ -27,6 +30,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/btcsuite/golangcrypto"
+  packages = ["ripemd160"]
+  revision = "53f62d9b43e87a6c56975cf862af7edf33a8d0df"
+
+[[projects]]
+  branch = "master"
   name = "github.com/btcsuite/websocket"
   packages = ["."]
   revision = "31079b6807923eb23992c421b114992b95131b55"
@@ -46,13 +55,75 @@
 [[projects]]
   branch = "master"
   name = "github.com/decred/dcrd"
-  packages = ["blockchain","blockchain/internal/dbnamespace","blockchain/internal/progresslog","blockchain/stake","blockchain/stake/internal/dbnamespace","blockchain/stake/internal/ticketdb","blockchain/stake/internal/tickettreap","certgen","chaincfg","chaincfg/chainec","chaincfg/chainhash","database","dcrec/edwards","dcrec/secp256k1","dcrec/secp256k1/schnorr","dcrjson","dcrutil","hdkeychain","rpcclient","txscript","wire"]
+  packages = [
+    "blockchain",
+    "blockchain/internal/dbnamespace",
+    "blockchain/internal/progresslog",
+    "blockchain/stake",
+    "blockchain/stake/internal/dbnamespace",
+    "blockchain/stake/internal/ticketdb",
+    "blockchain/stake/internal/tickettreap",
+    "certgen",
+    "chaincfg",
+    "chaincfg/chainec",
+    "chaincfg/chainhash",
+    "database",
+    "dcrec/edwards",
+    "dcrec/secp256k1",
+    "dcrec/secp256k1/schnorr",
+    "dcrjson",
+    "dcrutil",
+    "hdkeychain",
+    "rpcclient",
+    "txscript",
+    "wire"
+  ]
   revision = "dd5c048fd8f2856bc9ccde209ec18c64f5a01ea8"
+
+[[projects]]
+  name = "github.com/decred/dcrrpcclient"
+  packages = ["."]
+  revision = "4587f10de59ce3c041f2591871846398eea1406f"
+  version = "v0.8.0"
+
+[[projects]]
+  name = "github.com/decred/dcrstakepool"
+  packages = [
+    "backend/stakepoold/rpc/rpcserver",
+    "backend/stakepoold/rpc/stakepoolrpc",
+    "backend/stakepoold/userdata",
+    "controllers",
+    "helpers",
+    "models",
+    "poolapi",
+    "stakepooldclient",
+    "system"
+  ]
+  revision = "e794b5465a5ff581de8294e836ab39e2c06bcf2d"
+  version = "v1.1.1"
+
+[[projects]]
+  name = "github.com/decred/dcrutil"
+  packages = [
+    ".",
+    "base58",
+    "hdkeychain"
+  ]
+  revision = "ba0a5f399a43abc0e1a0a0442509c36f35321bce"
+  version = "v0.8.0"
 
 [[projects]]
   branch = "master"
   name = "github.com/decred/dcrwallet"
-  packages = ["apperrors","internal/helpers","internal/zero","snacl","wallet/txrules","wallet/udb","walletdb"]
+  packages = [
+    "apperrors",
+    "internal/helpers",
+    "internal/zero",
+    "snacl",
+    "wallet/txrules",
+    "wallet/udb",
+    "walletdb"
+  ]
   revision = "d7fe0625774bd8999b57018cfe043d4a03200860"
 
 [[projects]]
@@ -76,7 +147,13 @@
 [[projects]]
   branch = "master"
   name = "github.com/golang/protobuf"
-  packages = ["proto","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
+  packages = [
+    "proto",
+    "ptypes",
+    "ptypes/any",
+    "ptypes/duration",
+    "ptypes/timestamp"
+  ]
   revision = "bbd03ef6da3a115852eaf24c8a1c46aeb39aa175"
 
 [[projects]]
@@ -112,25 +189,63 @@
 [[projects]]
   branch = "master"
   name = "github.com/zenazn/goji"
-  packages = ["graceful","graceful/listener","web","web/middleware","web/mutil"]
+  packages = [
+    "graceful",
+    "graceful/listener",
+    "web",
+    "web/middleware",
+    "web/mutil"
+  ]
   revision = "c05078ca81941f8e801bba3ddc0e6b86b7fdc893"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
-  packages = ["bcrypt","blowfish","nacl/secretbox","pbkdf2","poly1305","ripemd160","salsa20/salsa","scrypt"]
+  packages = [
+    "bcrypt",
+    "blowfish",
+    "nacl/secretbox",
+    "pbkdf2",
+    "poly1305",
+    "ripemd160",
+    "salsa20/salsa",
+    "scrypt"
+  ]
   revision = "1875d0a70c90e57f11972aefd42276df65e895b9"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
-  packages = ["context","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
+  packages = [
+    "context",
+    "http2",
+    "http2/hpack",
+    "idna",
+    "internal/timeseries",
+    "lex/httplex",
+    "trace"
+  ]
   revision = "2fb46b16b8dda405028c50f7c7f0f9dd1fa6bfb1"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/text"
-  packages = ["collate","collate/build","internal/colltab","internal/gen","internal/tag","internal/triegen","internal/ucd","language","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  packages = [
+    "collate",
+    "collate/build",
+    "internal/colltab",
+    "internal/gen",
+    "internal/tag",
+    "internal/triegen",
+    "internal/ucd",
+    "language",
+    "secure/bidirule",
+    "transform",
+    "unicode/bidi",
+    "unicode/cldr",
+    "unicode/norm",
+    "unicode/rangetable"
+  ]
   revision = "e19ae1496984b1c655b8044a65c0300a3c878dd3"
 
 [[projects]]
@@ -148,12 +263,30 @@
 [[projects]]
   branch = "v1.7.x"
   name = "google.golang.org/grpc"
-  packages = [".","balancer","codes","connectivity","credentials","grpclb/grpc_lb_v1/messages","grpclog","internal","keepalive","metadata","naming","peer","resolver","stats","status","tap","transport"]
+  packages = [
+    ".",
+    "balancer",
+    "codes",
+    "connectivity",
+    "credentials",
+    "grpclb/grpc_lb_v1/messages",
+    "grpclog",
+    "internal",
+    "keepalive",
+    "metadata",
+    "naming",
+    "peer",
+    "resolver",
+    "stats",
+    "status",
+    "tap",
+    "transport"
+  ]
   revision = "fb57512bcf559adb14c19326b46a54cf0bbdefb0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "252566ea4c637022861092fe0079f3f90d35465968be941168e12e1d0fb82423"
+  inputs-digest = "e0ea9d18029dbfac2037bb037acd22429b23f5f698287ddba6f07b21f3295e8e"
   solver-name = "gps-cdcl"
   solver-version = 1

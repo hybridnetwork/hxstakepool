@@ -1,0 +1,59 @@
+package: github.com/hybridnetwork/hxstakepool
+import:
+- package: github.com/btcsuite/btclog
+- package: github.com/btcsuite/go-flags
+- package: github.com/decred/dcrd
+  subpackages:
+  - blockchain/stake
+  - certgen
+  - chaincfg
+  - chaincfg/chainhash
+  - dcrjson
+  - dcrutil
+  - hdkeychain
+  - rpcclient
+  - wire
+- package: github.com/decred/dcrstakepool
+  subpackages:
+  - backend/stakepoold/rpc/rpcserver
+  - backend/stakepoold/rpc/stakepoolrpc
+  - backend/stakepoold/userdata
+  - controllers
+  - helpers
+  - models
+  - poolapi
+  - stakepooldclient
+  - system
+- package: github.com/decred/dcrwallet
+  subpackages:
+  - wallet/txrules
+  - wallet/udb
+- package: github.com/dgrijalva/jwt-go
+- package: github.com/go-gorp/gorp
+- package: github.com/go-sql-driver/mysql
+- package: github.com/golang/protobuf
+  subpackages:
+  - proto
+- package: github.com/gorilla/context
+- package: github.com/gorilla/sessions
+- package: github.com/haisum/recaptcha
+- package: github.com/jrick/logrotate
+  subpackages:
+  - rotator
+- package: github.com/zenazn/goji
+  subpackages:
+  - graceful
+  - web
+  - web/middleware
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: google.golang.org/grpc
+  subpackages:
+  - codes
+  - connectivity
+  - credentials
+  - peer
