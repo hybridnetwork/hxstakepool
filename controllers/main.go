@@ -682,7 +682,7 @@ func (controller *MainController) Address(c web.C, r *http.Request) (string, int
 	c.Env["Flash"] = session.Flashes("address")
 	widgets := controller.Parse(t, "address", c.Env)
 
-	c.Env["Title"] = "Decred Stake Pool - Address"
+	c.Env["Title"] = "HX Stake Pool - Address"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -879,7 +879,7 @@ func (controller *MainController) EmailUpdate(c web.C, r *http.Request) (string,
 
 	widgets := controller.Parse(t, "emailupdate", c.Env)
 	c.Env["IsEmailUpdate"] = true
-	c.Env["Title"] = "Decred Stake Pool - Email Update"
+	c.Env["Title"] = "HX Stake Pool - Email Update"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -921,7 +921,7 @@ func (controller *MainController) EmailVerify(c web.C, r *http.Request) (string,
 
 	widgets := controller.Parse(t, "emailverify", c.Env)
 	c.Env["IsEmailVerify"] = true
-	c.Env["Title"] = "Decred Stake Pool - Email Verification"
+	c.Env["Title"] = "HX Stake Pool - Email Verification"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -938,7 +938,7 @@ func (controller *MainController) Error(c web.C, r *http.Request) (string, int) 
 	}
 
 	c.Env["IsError"] = true
-	c.Env["Title"] = "Decred Stake Pool - Error"
+	c.Env["Title"] = "HX Stake Pool - Error"
 	c.Env["RPCStatus"] = rpcstatus
 	c.Env["RateLimited"] = r.URL.Query().Get("rl")
 	c.Env["Referer"] = r.URL.Query().Get("r")
@@ -968,8 +968,7 @@ func (controller *MainController) Index(c web.C, r *http.Request) (string, int) 
 
 	// With that kind of flags template can "figure out" what route is being rendered
 	c.Env["IsIndex"] = true
-
-	c.Env["Title"] = "Decred Stake Pool - Welcome"
+	c.Env["Title"] = "HX Stake Pool - Welcome"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return helpers.Parse(t, "main", c.Env), http.StatusOK
@@ -988,7 +987,7 @@ func (controller *MainController) PasswordReset(c web.C, r *http.Request) (strin
 	}
 
 	widgets := controller.Parse(t, "passwordreset", c.Env)
-	c.Env["Title"] = "Decred Stake Pool - Password Reset"
+	c.Env["Title"] = "HX Stake Pool - Password Reset"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -1085,7 +1084,7 @@ func (controller *MainController) PasswordUpdate(c web.C, r *http.Request) (stri
 
 	widgets := controller.Parse(t, "passwordupdate", c.Env)
 	c.Env["IsPasswordUpdate"] = true
-	c.Env["Title"] = "Decred Stake Pool - Password Update"
+	c.Env["Title"] = "HX Stake Pool - Password Update"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -1198,7 +1197,7 @@ func (controller *MainController) Settings(c web.C, r *http.Request) (string, in
 	}
 
 	widgets := controller.Parse(t, "settings", c.Env)
-	c.Env["Title"] = "Decred Stake Pool - Settings"
+	c.Env["Title"] = "HX Stake Pool - Settings"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -1346,7 +1345,7 @@ func (controller *MainController) SignIn(c web.C, r *http.Request) (string, int)
 	c.Env["Flash"] = session.Flashes("auth")
 	widgets := controller.Parse(t, "auth/signin", c.Env)
 
-	c.Env["Title"] = "Decred Stake Pool - Sign In"
+	c.Env["Title"] = "HX Stake Pool - Sign In"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -1410,7 +1409,7 @@ func (controller *MainController) SignUp(c web.C, r *http.Request) (string, int)
 
 	widgets := controller.Parse(t, "auth/signup", c.Env)
 
-	c.Env["Title"] = "Decred Stake Pool - Sign Up"
+	c.Env["Title"] = "HX Stake Pool - Sign Up"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
@@ -1503,7 +1502,7 @@ func (controller *MainController) SignUpPost(c web.C, r *http.Request) (string, 
 func (controller *MainController) Stats(c web.C, r *http.Request) (string, int) {
 	t := controller.GetTemplate(c)
 	c.Env["IsStats"] = true
-	c.Env["Title"] = "Decred Stake Pool - Stats"
+	c.Env["Title"] = "HX Stake Pool - Stats"
 
 	dbMap := controller.GetDbMap(c)
 
@@ -1693,7 +1692,7 @@ func (controller *MainController) Tickets(c web.C, r *http.Request) (string, int
 	c.Env["IsTickets"] = true
 	c.Env["Network"] = controller.getNetworkName()
 	c.Env["PoolFees"] = controller.poolFees
-	c.Env["Title"] = "Decred Stake Pool - Tickets"
+	c.Env["Title"] = "HX Stake Pool - Tickets"
 
 	dbMap := controller.GetDbMap(c)
 	user, _ := models.GetUserById(dbMap, session.Values["UserId"].(int64))
@@ -1835,7 +1834,7 @@ func (controller *MainController) Voting(c web.C, r *http.Request) (string, int)
 	c.Env["VoteVersion"] = controller.voteVersion
 
 	widgets := controller.Parse(t, "voting", c.Env)
-	c.Env["Title"] = "Decred Stake Pool - Voting"
+	c.Env["Title"] = "HX Stake Pool - Voting"
 	c.Env["Content"] = template.HTML(widgets)
 
 	return controller.Parse(t, "main", c.Env), http.StatusOK
