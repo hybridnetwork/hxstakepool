@@ -46,7 +46,7 @@ const (
 )
 
 var (
-	hxstakepoolHomeDir = hxutil.AppDataDir("dcrstakepool", false)
+	hxstakepoolHomeDir = hxutil.AppDataDir("hxstakepool", false)
 	defaultConfigFile   = filepath.Join(hxstakepoolHomeDir, defaultConfigFilename)
 	defaultDataDir      = filepath.Join(hxstakepoolHomeDir, defaultDataDirname)
 	defaultLogDir       = filepath.Join(hxstakepoolHomeDir, defaultLogDirname)
@@ -56,7 +56,7 @@ var (
 // to parse and execute service commands specified via the -s flag.
 var runServiceCommand func(string) error
 
-// config defines the configuration options for dcrd.
+// config defines the configuration options for hxd.
 //
 // See loadConfig for details on the configuration load process.
 type config struct {
@@ -577,7 +577,7 @@ func loadConfig() (*config, []string, error) {
 
 	for idx := range cfg.WalletCerts {
 		if !fileExists(cfg.WalletCerts[idx]) {
-			path := filepath.Join(dcrstakepoolHomeDir, cfg.WalletCerts[idx])
+			path := filepath.Join(hxstakepoolHomeDir, cfg.WalletCerts[idx])
 			if !fileExists(path) {
 				str := "%s: walletcert " + cfg.WalletCerts[idx] + " and " +
 					path + " don't exist"
@@ -630,7 +630,7 @@ func loadConfig() (*config, []string, error) {
 
 		for idx := range cfg.StakepooldCerts {
 			if !fileExists(cfg.StakepooldCerts[idx]) {
-				path := filepath.Join(dcrstakepoolHomeDir,
+				path := filepath.Join(hxstakepoolHomeDir,
 					cfg.StakepooldCerts[idx])
 				if !fileExists(path) {
 					str := "%s: stakepooldcert " +

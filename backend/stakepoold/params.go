@@ -11,7 +11,7 @@ import (
 )
 
 // activeNetParams is a pointer to the parameters specific to the
-// currently active decred network.
+// currently active HX network.
 var activeNetParams = &mainNetParams
 
 // params is used to group parameters for various networks such as the main
@@ -55,8 +55,8 @@ var simNetParams = params{
 	WalletRPCServerPort: "29557",
 }
 
-// netName returns the name used when referring to a decred network.  At the
-// time of writing, dcrd currently places blocks for testnet version 0 in the
+// netName returns the name used when referring to a HX network.  At the
+// time of writing, hxd currently places blocks for testnet version 0 in the
 // data and log directory "testnet", which does not match the Name field of the
 // chaincfg parameters.  This function can be used to override this directory name
 // as "testnet" when the passed active network matches wire.TestNet.

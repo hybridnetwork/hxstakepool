@@ -2,6 +2,9 @@ package: github.com/hybridnetwork/teststakepool
 import:
 - package: github.com/btcsuite/btclog
 - package: github.com/btcsuite/go-flags
+- package: github.com/decred/dcrd
+  subpackages:
+  - certgen
 - package: github.com/dgrijalva/jwt-go
 - package: github.com/go-gorp/gorp
 - package: github.com/go-sql-driver/mysql
@@ -17,7 +20,6 @@ import:
   - chaincfg
   - chaincfg/chainhash
   - dcrjson
-  - hdkeychain
   - wire
 - package: github.com/hybridnetwork/hxrpcclient
 - package: github.com/hybridnetwork/hxstakepool
@@ -33,7 +35,7 @@ import:
   - system
 - package: github.com/hybridnetwork/hxutil
   subpackages:
-  - certgen
+  - hdkeychain
 - package: github.com/hybridnetwork/hxwallet
   subpackages:
   - wallet/txrules

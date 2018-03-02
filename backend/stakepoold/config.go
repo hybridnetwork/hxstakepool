@@ -45,7 +45,7 @@ var (
 // to parse and execute service commands specified via the -s flag.
 var runServiceCommand func(string) error
 
-// config defines the configuration options for dcrd.
+// config defines the configuration options for hxd.
 //
 // See loadConfig for details on the configuration load process.
 type config struct {

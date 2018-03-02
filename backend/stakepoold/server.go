@@ -25,7 +25,7 @@ import (
 	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
 	"github.com/hybridnetwork/hxd/dcrjson"
 	dcrutil "github.com/hybridnetwork/hxutil"
-	"github.com/hybridnetwork/hxd/hdkeychain"
+	"github.com/hybridnetwork/hxutil/hdkeychain"
 	rcpclient "github.com/hybridnetwork/hxrpcclient"
 	"github.com/hybridnetwork/hxd/wire"
 
@@ -310,10 +310,10 @@ func runMain() error {
 	var walletVer semver
 	walletConn, walletVer, err := connectWalletRPC(cfg)
 	if err != nil || walletConn == nil {
-		log.Infof("Connection to dcrwallet failed: %v", err)
+		log.Infof("Connection to hxwallet failed: %v", err)
 		return err
 	}
-	log.Infof("Connected to dcrwallet (JSON-RPC API v%s)",
+	log.Infof("Connected to hxwallet (JSON-RPC API v%s)",
 		walletVer.String())
 	walletInfoRes, err := walletConn.WalletInfo()
 	if err != nil || walletInfoRes == nil {
@@ -430,7 +430,7 @@ func runMain() error {
 	for {
 		curHash, curHeight, err := nodeConn.GetBestBlock()
 		if err != nil {
-			log.Errorf("unable to get bestblock from dcrd: %v", err)
+			log.Errorf("unable to get bestblock from hxd: %v", err)
 			return err
 		}
 		log.Infof("current block height %v hash %v", curHeight, curHash)
@@ -443,7 +443,7 @@ func runMain() error {
 
 		afterHash, afterHeight, err := nodeConn.GetBestBlock()
 		if err != nil {
-			log.Errorf("unable to get bestblock from dcrd: %v", err)
+			log.Errorf("unable to get bestblock from hxd: %v", err)
 			return err
 		}
 
@@ -476,7 +476,7 @@ func runMain() error {
 			"spent/missed tickets notifications: %s\n", err.Error())
 		return err
 	}
-	log.Info("subscribed to notifications from dcrd")
+	log.Info("subscribed to notifications from hxd")
 
 	if !cfg.NoRPCListen {
 		startGRPCServers(ctx.grpcCommandQueueChan)
@@ -759,7 +759,7 @@ type ticketMetadata struct {
 	voteBitsExtended string                    // voteBits extended
 }
 
-// getticket pulls the transaction information for a ticket from dcrwallet. This is a go routine!
+// getticket pulls the transaction information for a ticket from hxwallet. This is a go routine!
 func (ctx *appContext) getticket(wg *sync.WaitGroup, nt *ticketMetadata) {
 	start := time.Now()
 
@@ -1130,7 +1130,7 @@ func (ctx *appContext) processWinningTickets(wt WinningTicketsForBlock) {
 		} else {
 			// If the user's voting config has a vote version that
 			// is different from our global vote version that we
-			// plucked from dcrwallet walletinfo then just use the
+			// plucked from hxwallet walletinfo then just use the
 			// default votebits.
 			if voteCfg.VoteBitsVersion !=
 				ctx.votingConfig.VoteVersion {

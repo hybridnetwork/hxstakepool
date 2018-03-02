@@ -1,0 +1,217 @@
+hash: 2d62659d579f2409ade1f15309e27d57e878afbb0eb8d79699540c1223585c65
+updated: 2018-03-02T05:41:39.482724828Z
+imports:
+- name: github.com/agl/ed25519
+  version: 5312a61534124124185d41f09206b9fef1d88403
+  subpackages:
+  - edwards25519
+- name: github.com/btcsuite/btclog
+  version: 84c8d2346e9fc8c7b947e243b9c24e6df9fd206a
+- name: github.com/btcsuite/go-flags
+  version: 6c288d648c1cc1befcb90cb5511dcacf64ae8e61
+- name: github.com/btcsuite/go-socks
+  version: 4720035b7bfd2a9bb130b1c184f8bbe41b6f0d0f
+  subpackages:
+  - socks
+- name: github.com/btcsuite/websocket
+  version: 31079b6807923eb23992c421b114992b95131b55
+- name: github.com/dchest/blake256
+  version: dee3fe6eb0e98dc774a94fc231f85baf7c29d360
+- name: github.com/decred/base58
+  version: 229e657bc9be5d592855a910428907f851950ed5
+- name: github.com/decred/dcrd
+  version: d19ad36d9b71ea8ac4aae005cb9a28a826071f3e
+  subpackages:
+  - blockchain
+  - blockchain/internal/dbnamespace
+  - blockchain/internal/progresslog
+  - blockchain/stake
+  - blockchain/stake/internal/dbnamespace
+  - blockchain/stake/internal/ticketdb
+  - blockchain/stake/internal/tickettreap
+  - certgen
+  - chaincfg
+  - chaincfg/chainec
+  - chaincfg/chainhash
+  - database
+  - dcrec/edwards
+  - dcrec/secp256k1
+  - dcrec/secp256k1/schnorr
+  - dcrjson
+  - dcrutil
+  - hdkeychain
+  - rpcclient
+  - txscript
+  - wire
+- name: github.com/decred/dcrstakepool
+  version: f325eb2e8db866604a2930442a9dee2a3b7d5e96
+  subpackages:
+  - backend/stakepoold/rpc/stakepoolrpc
+  - backend/stakepoold/userdata
+  - helpers
+  - models
+  - poolapi
+  - stakepooldclient
+  - system
+- name: github.com/decred/dcrwallet
+  version: a47b29d4b51906f396080761e13c9af07686b9c0
+  subpackages:
+  - apperrors
+  - internal/zero
+  - snacl
+  - wallet/udb
+  - walletdb
+- name: github.com/dgrijalva/jwt-go
+  version: dbeaa9332f19a944acb5736b4456cfcc02140e29
+- name: github.com/go-gorp/gorp
+  version: 4df78490a9aa9a78b9b02b0c913df8dc1954faee
+- name: github.com/go-sql-driver/mysql
+  version: bc14601d1bd56421dd60f561e6052c9ed77f9daf
+- name: github.com/golang/protobuf
+  version: bbd03ef6da3a115852eaf24c8a1c46aeb39aa175
+  subpackages:
+  - proto
+  - ptypes
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/timestamp
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/securecookie
+  version: e59506cc896acb7f7bf732d4fdf5e25f7ccd8983
+- name: github.com/gorilla/sessions
+  version: 7087b4d669d1bc3da42fb4e2eda73ae139a24439
+- name: github.com/haisum/recaptcha
+  version: 7d3b8053900e7a0f549a11e800649a5fa950700f
+- name: github.com/hybridnetwork/bliss
+  version: d4ac50e0aab7cac32202e87d7cee03e65155cf7d
+  subpackages:
+  - huffman
+  - params
+  - poly
+  - sampler
+- name: github.com/hybridnetwork/hxd
+  version: 05cb2ec82418be2ef45df8f40a8fb1e97e901cfc
+  subpackages:
+  - blockchain
+  - blockchain/internal/dbnamespace
+  - blockchain/internal/progresslog
+  - blockchain/stake
+  - blockchain/stake/internal/dbnamespace
+  - blockchain/stake/internal/ticketdb
+  - blockchain/stake/internal/tickettreap
+  - chaincfg
+  - chaincfg/chainec
+  - chaincfg/chainhash
+  - crypto
+  - crypto/bliss
+  - database
+  - dcrec/edwards
+  - dcrec/secp256k1
+  - dcrec/secp256k1/schnorr
+  - dcrjson
+  - txscript
+  - wire
+- name: github.com/hybridnetwork/hxrpcclient
+  version: ffd2b9e752f9864a1b34ef1abcac8d9937769656
+- name: github.com/hybridnetwork/hxstakepool
+  version: 52e61a2c1611ea7144756f76a0705299b9958011
+  subpackages:
+  - backend/stakepoold/rpc/rpcserver
+  - backend/stakepoold/rpc/stakepoolrpc
+  - backend/stakepoold/userdata
+  - controllers
+  - helpers
+  - models
+  - poolapi
+  - stakepooldclient
+  - system
+- name: github.com/hybridnetwork/hxutil
+  version: db53d84b83d06ba2b133a7c7704ad4e173ac8d5d
+  subpackages:
+  - base58
+  - hdkeychain
+- name: github.com/hybridnetwork/hxwallet
+  version: 7a85a1b0e6faba1585160d883d90784f11f2b915
+  subpackages:
+  - apperrors
+  - internal/zero
+  - snacl
+  - wallet/txrules
+  - wallet/udb
+  - walletdb
+- name: github.com/jrick/logrotate
+  version: a93b200c26cbae3bb09dd0dc2c7c7fe1468a034a
+  subpackages:
+  - rotator
+- name: github.com/zenazn/goji
+  version: c05078ca81941f8e801bba3ddc0e6b86b7fdc893
+  subpackages:
+  - graceful
+  - graceful/listener
+  - web
+  - web/middleware
+  - web/mutil
+- name: golang.org/x/crypto
+  version: 91a49db82a88618983a78a06c1cbd4e00ab749ab
+  subpackages:
+  - bcrypt
+  - blowfish
+  - nacl/secretbox
+  - pbkdf2
+  - poly1305
+  - ripemd160
+  - salsa20/salsa
+  - scrypt
+  - sha3
+- name: golang.org/x/net
+  version: cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb
+  subpackages:
+  - context
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - lex/httplex
+  - trace
+- name: golang.org/x/text
+  version: 27420a1a391f5504f73155051cd274311bf70883
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+- name: google.golang.org/appengine
+  version: 5bee14b453b4c71be47ec1781b0fa61c2ea182db
+  subpackages:
+  - cloudsql
+- name: google.golang.org/genproto
+  version: 2b5a72b8730b0b16380010cfe5286c42108d88e7
+  subpackages:
+  - googleapis/rpc/status
+- name: google.golang.org/grpc
+  version: 8e4536a86ab602859c20df5ebfd0bd4228d08655
+  subpackages:
+  - balancer
+  - balancer/base
+  - balancer/roundrobin
+  - codes
+  - connectivity
+  - credentials
+  - encoding
+  - encoding/proto
+  - grpclb/grpc_lb_v1/messages
+  - grpclog
+  - internal
+  - keepalive
+  - metadata
+  - naming
+  - peer
+  - resolver
+  - resolver/dns
+  - resolver/passthrough
+  - stats
+  - status
+  - tap
+  - transport
+testImports: []

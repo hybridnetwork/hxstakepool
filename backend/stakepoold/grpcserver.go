@@ -20,7 +20,7 @@ import (
 
 	xcontext "golang.org/x/net/context"
 
-	"github.com/hybridnetwork/hxutil/certgen"
+	"github.com/decred/dcrd/certgen"
 	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/rpc/rpcserver"
 
 	"google.golang.org/grpc"
