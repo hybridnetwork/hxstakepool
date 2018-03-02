@@ -1,5 +1,5 @@
 hash: 1c3e000be3b58e0ac5af1da319c70732c63ace6fd48cc5b225ac33a02d4b7180
-updated: 2018-02-18T00:35:42.486305673Z
+updated: 2018-02-27T02:07:13.431892609Z
 imports:
 - name: github.com/agl/ed25519
   version: 5312a61534124124185d41f09206b9fef1d88403
@@ -18,9 +18,9 @@ imports:
 - name: github.com/dchest/blake256
   version: dee3fe6eb0e98dc774a94fc231f85baf7c29d360
 - name: github.com/decred/base58
-  version: a5d313ea54d82327fbdc0fefc817776aa74f44f0
+  version: 229e657bc9be5d592855a910428907f851950ed5
 - name: github.com/decred/dcrd
-  version: 2b035376894d36067fd1aa716d7759f221ec7268
+  version: d19ad36d9b71ea8ac4aae005cb9a28a826071f3e
   subpackages:
   - blockchain
   - blockchain/internal/dbnamespace
@@ -44,7 +44,7 @@ imports:
   - txscript
   - wire
 - name: github.com/decred/dcrstakepool
-  version: 52e61a2c1611ea7144756f76a0705299b9958011
+  version: f325eb2e8db866604a2930442a9dee2a3b7d5e96
   subpackages:
   - backend/stakepoold/rpc/rpcserver
   - backend/stakepoold/rpc/stakepoolrpc
@@ -56,7 +56,7 @@ imports:
   - stakepooldclient
   - system
 - name: github.com/decred/dcrwallet
-  version: a7f0e4017b4976775b68d2d1082a7eca416c94f3
+  version: a47b29d4b51906f396080761e13c9af07686b9c0
   subpackages:
   - apperrors
   - internal/helpers
@@ -68,7 +68,7 @@ imports:
 - name: github.com/dgrijalva/jwt-go
   version: dbeaa9332f19a944acb5736b4456cfcc02140e29
 - name: github.com/go-gorp/gorp
-  version: c5fd513e7b0a246178d6eb97c6cfe334b7e96afc
+  version: 4df78490a9aa9a78b9b02b0c913df8dc1954faee
 - name: github.com/go-sql-driver/mysql
   version: bc14601d1bd56421dd60f561e6052c9ed77f9daf
 - name: github.com/golang/protobuf
@@ -84,7 +84,7 @@ imports:
 - name: github.com/gorilla/securecookie
   version: e59506cc896acb7f7bf732d4fdf5e25f7ccd8983
 - name: github.com/gorilla/sessions
-  version: 6ba88b7f1c1e2c8298ec7fb2efda9ee411375c80
+  version: 7087b4d669d1bc3da42fb4e2eda73ae139a24439
 - name: github.com/haisum/recaptcha
   version: 7d3b8053900e7a0f549a11e800649a5fa950700f
 - name: github.com/jrick/logrotate
@@ -100,7 +100,7 @@ imports:
   - web/middleware
   - web/mutil
 - name: golang.org/x/crypto
-  version: 650f4a345ab4e5b245a3034b110ebc7299e68186
+  version: 49796115aa4b964c318aad4f3084fdb41e9aa067
   subpackages:
   - bcrypt
   - blowfish
@@ -111,7 +111,7 @@ imports:
   - salsa20/salsa
   - scrypt
 - name: golang.org/x/net
-  version: 136a25c244d3019482a795d728110278d6ba09a4
+  version: cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb
   subpackages:
   - context
   - http2
@@ -121,7 +121,7 @@ imports:
   - lex/httplex
   - trace
 - name: golang.org/x/text
-  version: 4e4a3210bb54bb31f6ab2cdca2edcc0b50c420c1
+  version: 27420a1a391f5504f73155051cd274311bf70883
   subpackages:
   - secure/bidirule
   - transform
@@ -136,7 +136,7 @@ imports:
   subpackages:
   - googleapis/rpc/status
 - name: google.golang.org/grpc
-  version: dfa18343df54bda471a4b53677aa7c0d0df882d1
+  version: 8e4536a86ab602859c20df5ebfd0bd4228d08655
   subpackages:
   - balancer
   - balancer/base

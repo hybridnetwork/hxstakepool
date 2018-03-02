@@ -31,9 +31,9 @@ type params struct {
 // to emulate the full reference implementation RPC API.
 var mainNetParams = params{
 	Params:              &chaincfg.MainNetParams,
-	DcrdRPCServerPort:   "9109",
-	RPCServerPort:       "9113",
-	WalletRPCServerPort: "9110",
+	DcrdRPCServerPort:   "1109",
+	RPCServerPort:       "1113",
+	WalletRPCServerPort: "1110",
 }
 
 // testNet2Params contains parameters specific to the test network (version 0)
@@ -41,18 +41,18 @@ var mainNetParams = params{
 // reference implementation - see the mainNetParams comment for details.
 var testNet2Params = params{
 	Params:              &chaincfg.TestNet2Params,
-	DcrdRPCServerPort:   "19109",
-	RPCServerPort:       "19113",
-	WalletRPCServerPort: "19110",
+	DcrdRPCServerPort:   "12009",
+	RPCServerPort:       "12013",
+	WalletRPCServerPort: "12010",
 }
 
 // simNetParams contains parameters specific to the simulation test network
 // (wire.SimNet).
 var simNetParams = params{
 	Params:              &chaincfg.SimNetParams,
-	DcrdRPCServerPort:   "19556",
-	RPCServerPort:       "19560",
-	WalletRPCServerPort: "19557",
+	DcrdRPCServerPort:   "29556",
+	RPCServerPort:       "29560",
+	WalletRPCServerPort: "29557",
 }
 
 // netName returns the name used when referring to a decred network.  At the

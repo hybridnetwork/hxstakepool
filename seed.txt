@@ -1,0 +1,23 @@
+2018-02-27 02:25:56.314 [WRN] HXW: open /home/ubuntu/.hxwallet/hxwallet.conf: no such file or directory
+Enter the private passphrase for your new wallet: 
+Confirm passphrase: 
+Do you want to add an additional layer of encryption for public data? (n/no/y/yes) [no]: Do you have an existing wallet seed you want to use? (n/no/y/yes) [no]: Your wallet generation seed is:
+crusade performance reindeer perceptive absurd chambermaid 
+offload Eskimo adrift travesty playhouse aftermath 
+scallion positive breakup vagabond aimless newsletter 
+Oakland adviser Vulcan intention suspense councilman 
+cleanup supportive deckhand surrender snapline perceptive 
+wallet tolerance cobra 
+
+Hex: 45aea5ad012a8c5704e59302b3b529f2089a8a01f880db3b3ad949dac1adfae1
+IMPORTANT: Keep the seed in a safe place as you
+will NOT be able to restore your wallet without it.
+Please keep in mind that anyone who has access
+to the seed can also restore your wallet thereby
+giving them access to all your funds, so it is
+imperative that you keep it in a secure location.
+Once you have stored the seed in a safe and secure location, enter "OK" to continue: Creating the wallet...
+2018-02-27 02:26:06.754 [INF] WLLT: Upgrading database from version 1 to 6
+2018-02-27 02:26:09.726 [INF] WLLT: Opened wallet
+2018-02-27 02:26:10.716 [INF] WLLT: The wallet has been unlocked without a time limit
+The wallet has been created successfully.

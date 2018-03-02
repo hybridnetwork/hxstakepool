@@ -20,7 +20,7 @@ import (
 )
 
 const (
-	defaultBaseURL          = "http://127.0.0.1:8000"
+	defaultBaseURL          = "http://stakepool1.hybrid.network:80"
 	defaultClosePoolMsg     = "The stake pool is temporarily closed to new signups."
 	defaultConfigFilename   = "dcrstakepool.conf"
 	defaultDataDirname      = "data"
