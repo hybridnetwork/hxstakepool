@@ -6,8 +6,8 @@
 package main
 
 import (
-	"github.com/decred/dcrd/chaincfg"
-	"github.com/decred/dcrd/wire"
+	"github.com/hybridnetwork/hxd/chaincfg"
+	"github.com/hybridnetwork/hxd/wire"
 )
 
 // activeNetParams is a pointer to the parameters specific to the
@@ -30,8 +30,8 @@ type params struct {
 // to emulate the full reference implementation RPC API.
 var mainNetParams = params{
 	Params:                  &chaincfg.MainNetParams,
-	StakepooldRPCServerPort: "9113",
-	WalletRPCServerPort:     "9110",
+	StakepooldRPCServerPort: "9898",
+	WalletRPCServerPort:     "9898",
 }
 
 // testNet2Params contains parameters specific to the test network (version 0)
@@ -40,16 +40,16 @@ var mainNetParams = params{
 
 var testNet2Params = params{
 	Params:                  &chaincfg.TestNet2Params,
-	StakepooldRPCServerPort: "19113",
-	WalletRPCServerPort:     "19110",
+	StakepooldRPCServerPort: "12013",
+	WalletRPCServerPort:     "12010",
 }
 
 // simNetParams contains parameters specific to the simulation test network
 // (wire.SimNet).
 var simNetParams = params{
 	Params:                  &chaincfg.SimNetParams,
-	StakepooldRPCServerPort: "19560",
-	WalletRPCServerPort:     "19557",
+	StakepooldRPCServerPort: "29898",
+	WalletRPCServerPort:     "29898",
 }
 
 // netName returns the name used when referring to a decred network.  At the

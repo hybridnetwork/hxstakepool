@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/rpcclient"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	rpcclient "github.com/hybridnetwork/hxrpcclient"
 )
 
 // Define notification handlers

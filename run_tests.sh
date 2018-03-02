@@ -21,7 +21,7 @@ set -ex
 
 #Default GOVERSION
 GOVERSION=${1:-1.9}
-REPO=dcrstakepool
+REPO=hxstakepool
 DOCKER_IMAGE_TAG=decred-golang-builder-$GOVERSION
 
 testrepo () {
@@ -76,10 +76,10 @@ if [ $? != 0 ]; then
   exit 1
 fi
 
-docker run --rm -it -v $(pwd):/src decred/$DOCKER_IMAGE_TAG /bin/bash -c "\
+docker run --rm -it -v $(pwd):/src hybridnetwork/$DOCKER_IMAGE_TAG /bin/bash -c "\
   rsync -ra --filter=':- .gitignore'  \
-  /src/ /go/src/github.com/decred/$REPO/ && \
-  cd github.com/decred/$REPO/ && \
+  /src/ /go/src/github.com/hybridnetwork/$REPO/ && \
+  cd github.com/hybridnetwork/$REPO/ && \
   bash run_tests.sh local"
 if [ $? != 0 ]; then
         echo 'docker run failed'

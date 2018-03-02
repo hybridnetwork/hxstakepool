@@ -10,12 +10,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrjson"
-	"github.com/decred/dcrd/dcrutil"
-	"github.com/decred/dcrd/rpcclient"
-	"github.com/decred/dcrstakepool/models"
-	"github.com/decred/dcrwallet/wallet/udb"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	"github.com/hybridnetwork/hxd/dcrjson"
+	dcrutil "github.com/hybridnetwork/hxutil"
+	rpcclient "github.com/hybridnetwork/hxrpcclient"
+	"github.com/hybridnetwork/hxstakepool/models"
+	"github.com/hybridnetwork/hxwallet/wallet/udb"
 )
 
 // functionName
@@ -1407,7 +1407,7 @@ func connectWalletRPC(walletHost string, walletCert string, walletUser string, w
 	return client, nil
 }
 
-// newWalletSvrManager returns a new decred wallet server manager.
+// newWalletSvrManager returns a new hybridnetwork wallet server manager.
 // Use Start to begin processing asynchronous block and inv updates.
 func newWalletSvrManager(walletHosts []string, walletCerts []string,
 	walletUsers []string, walletPasswords []string, minServers int) (*walletSvrManager, error) {

@@ -9,11 +9,11 @@
 
 [[constraint]]
   branch = "master"
-  name = "github.com/decred/dcrd"
+  name = "github.com/hybridnetwork/hxd"
 
 [[constraint]]
   branch = "master"
-  name = "github.com/decred/dcrwallet"
+  name = "github.com/hybridnetwork/hxwallet"
 
 [[constraint]]
   branch = "master"

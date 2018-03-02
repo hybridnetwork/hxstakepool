@@ -5,10 +5,10 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrutil"
-	"github.com/decred/dcrd/rpcclient"
-	"github.com/decred/dcrstakepool/backend/stakepoold/userdata"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	"github.com/hybridnetwork/hxutil"
+	rpcclient "github.com/hybridnetwork/hxrpcclient"
+	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/userdata"
 )
 
 var requiredChainServerAPI = semver{major: 3, minor: 1, patch: 0}
@@ -17,41 +17,41 @@ var requiredWalletAPI = semver{major: 5, minor: 0, patch: 0}
 func connectNodeRPC(ctx *appContext, cfg *config) (*rpcclient.Client, semver, error) {
 	var nodeVer semver
 
-	dcrdCert, err := ioutil.ReadFile(cfg.DcrdCert)
+	hxdCert, err := ioutil.ReadFile(cfg.HxdCert)
 	if err != nil {
-		log.Errorf("Failed to read dcrd cert file at %s: %s\n",
-			cfg.DcrdCert, err.Error())
+		log.Errorf("Failed to read hxd cert file at %s: %s\n",
+			cfg.HxdCert, err.Error())
 		return nil, nodeVer, err
 	}
 
-	log.Debugf("Attempting to connect to dcrd RPC %s as user %s "+
+	log.Debugf("Attempting to connect to hxd RPC %s as user %s "+
 		"using certificate located in %s",
-		cfg.DcrdHost, cfg.DcrdUser, cfg.DcrdCert)
+		cfg.HxdHost, cfg.HxdUser, cfg.HxdCert)
 
 	connCfgDaemon := &rpcclient.ConnConfig{
-		Host:         cfg.DcrdHost,
+		Host:         cfg.HxdHost,
 		Endpoint:     "ws", // websocket
-		User:         cfg.DcrdUser,
-		Pass:         cfg.DcrdPassword,
-		Certificates: dcrdCert,
+		User:         cfg.HxdUser,
+		Pass:         cfg.HxdPassword,
+		Certificates: HxdCert,
 	}
 
 	ntfnHandlers := getNodeNtfnHandlers(ctx, connCfgDaemon)
-	dcrdClient, err := rpcclient.New(connCfgDaemon, ntfnHandlers)
+	hxdClient, err := rpcclient.New(connCfgDaemon, ntfnHandlers)
 	if err != nil {
-		log.Errorf("Failed to start dcrd RPC client: %s\n", err.Error())
+		log.Errorf("Failed to start hxd RPC client: %s\n", err.Error())
 		return nil, nodeVer, err
 	}
 
 	// Ensure the RPC server has a compatible API version.
-	ver, err := dcrdClient.Version()
+	ver, err := hxdClient.Version()
 	if err != nil {
 		log.Error("Unable to get RPC version: ", err)
 		return nil, nodeVer, fmt.Errorf("Unable to get node RPC version")
 	}
 
-	dcrdVer := ver["dcrdjsonrpcapi"]
-	nodeVer = semver{dcrdVer.Major, dcrdVer.Minor, dcrdVer.Patch}
+	hxdVer := ver["hxdjsonrpcapi"]
+	nodeVer = semver{hxdVer.Major, hxdVer.Minor, hxdVer.Patch}
 
 	if !semverCompatible(requiredChainServerAPI, nodeVer) {
 		return nil, nodeVer, fmt.Errorf("Node JSON-RPC server does not have "+
@@ -59,20 +59,20 @@ func connectNodeRPC(ctx *appContext, cfg *config) (*rpcclient.Client, semver, er
 			nodeVer, requiredChainServerAPI)
 	}
 
-	return dcrdClient, nodeVer, nil
+	return hxdClient, nodeVer, nil
 }
 
 func connectWalletRPC(cfg *config) (*rpcclient.Client, semver, error) {
 	var walletVer semver
 
-	dcrwCert, err := ioutil.ReadFile(cfg.WalletCert)
+	hxwCert, err := ioutil.ReadFile(cfg.WalletCert)
 	if err != nil {
-		log.Errorf("Failed to read dcrwallet cert file at %s: %s\n",
+		log.Errorf("Failed to read hxwallet cert file at %s: %s\n",
 			cfg.WalletCert, err.Error())
 		return nil, walletVer, err
 	}
 
-	log.Infof("Attempting to connect to dcrwallet RPC %s as user %s "+
+	log.Infof("Attempting to connect to hxwallet RPC %s as user %s "+
 		"using certificate located in %s",
 		cfg.WalletHost, cfg.WalletUser, cfg.WalletCert)
 
@@ -81,11 +81,11 @@ func connectWalletRPC(cfg *config) (*rpcclient.Client, semver, error) {
 		Endpoint:     "ws",
 		User:         cfg.WalletUser,
 		Pass:         cfg.WalletPassword,
-		Certificates: dcrwCert,
+		Certificates: hxwCert,
 	}
 
 	ntfnHandlers := getWalletNtfnHandlers(cfg)
-	dcrwClient, err := rpcclient.New(connCfgWallet, ntfnHandlers)
+	hxwClient, err := rpcclient.New(connCfgWallet, ntfnHandlers)
 	if err != nil {
 		log.Errorf("Verify that username and password is correct and that "+
 			"rpc.cert is for your wallet: %v", cfg.WalletCert)
@@ -93,14 +93,14 @@ func connectWalletRPC(cfg *config) (*rpcclient.Client, semver, error) {
 	}
 
 	// Ensure the wallet RPC server has a compatible API version.
-	ver, err := dcrwClient.Version()
+	ver, err := hxwClient.Version()
 	if err != nil {
 		log.Error("Unable to get RPC version: ", err)
 		return nil, walletVer, fmt.Errorf("Unable to get node RPC version")
 	}
 
-	dcrwVer := ver["dcrwalletjsonrpcapi"]
-	walletVer = semver{dcrwVer.Major, dcrwVer.Minor, dcrwVer.Patch}
+	hxwVer := ver["hxwalletjsonrpcapi"]
+	walletVer = semver{hxwVer.Major, hxwVer.Minor, hxwVer.Patch}
 
 	if !semverCompatible(requiredWalletAPI, walletVer) {
 		log.Warnf("Node JSON-RPC server %v does not have "+
@@ -108,7 +108,7 @@ func connectWalletRPC(cfg *config) (*rpcclient.Client, semver, error) {
 			cfg.WalletHost, walletVer, requiredWalletAPI)
 	}
 
-	return dcrwClient, walletVer, nil
+	return hxwClient, walletVer, nil
 }
 
 func walletGetTickets(ctx *appContext, currentHeight int64) (map[chainhash.Hash]string, map[chainhash.Hash]string, error) {
@@ -164,7 +164,7 @@ func walletGetTickets(ctx *appContext, currentHeight int64) (map[chainhash.Hash]
 				continue
 			}
 
-			addr, err := dcrutil.DecodeAddress(gt.Details[i].Address)
+			addr, err := hxutil.DecodeAddress(gt.Details[i].Address)
 			if err != nil {
 				log.Warnf("invalid address %v", err)
 				continue

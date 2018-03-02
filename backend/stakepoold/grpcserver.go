@@ -20,8 +20,8 @@ import (
 
 	xcontext "golang.org/x/net/context"
 
-	"github.com/decred/dcrd/certgen"
-	"github.com/decred/dcrstakepool/backend/stakepoold/rpc/rpcserver"
+	"github.com/hybridnetwork/hxutil/certgen"
+	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/rpc/rpcserver"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

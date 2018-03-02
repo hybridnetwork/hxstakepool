@@ -6,8 +6,8 @@
 package main
 
 import (
-	"github.com/decred/dcrd/chaincfg"
-	"github.com/decred/dcrd/wire"
+	"github.com/hybridnetwork/hxd/chaincfg"
+	"github.com/hybridnetwork/hxd/wire"
 )
 
 // activeNetParams is a pointer to the parameters specific to the
@@ -25,15 +25,15 @@ type params struct {
 
 // mainNetParams contains parameters specific to the main network
 // (wire.MainNet).  NOTE: The RPC port is intentionally different than the
-// reference implementation because dcrd does not handle wallet requests.  The
+// reference implementation because hxd does not handle wallet requests.  The
 // separate wallet process listens on the well-known port and forwards requests
-// it does not handle on to dcrd.  This approach allows the wallet process
+// it does not handle on to hxd.  This approach allows the wallet process
 // to emulate the full reference implementation RPC API.
 var mainNetParams = params{
 	Params:              &chaincfg.MainNetParams,
-	DcrdRPCServerPort:   "9109",
-	RPCServerPort:       "9113",
-	WalletRPCServerPort: "9110",
+	HxdRPCServerPort:   "19109",
+	RPCServerPort:       "19113",
+	WalletRPCServerPort: "19110",
 }
 
 // testNet2Params contains parameters specific to the test network (version 0)
@@ -41,18 +41,18 @@ var mainNetParams = params{
 // reference implementation - see the mainNetParams comment for details.
 var testNet2Params = params{
 	Params:              &chaincfg.TestNet2Params,
-	DcrdRPCServerPort:   "19109",
-	RPCServerPort:       "19113",
-	WalletRPCServerPort: "19110",
+	HxdRPCServerPort:   "12009",
+	RPCServerPort:       "12013",
+	WalletRPCServerPort: "12010",
 }
 
 // simNetParams contains parameters specific to the simulation test network
 // (wire.SimNet).
 var simNetParams = params{
 	Params:              &chaincfg.SimNetParams,
-	DcrdRPCServerPort:   "19556",
-	RPCServerPort:       "19560",
-	WalletRPCServerPort: "19557",
+	DcrdRPCServerPort:   "29556",
+	RPCServerPort:       "29560",
+	WalletRPCServerPort: "29557",
 }
 
 // netName returns the name used when referring to a decred network.  At the

@@ -16,7 +16,7 @@ import (
 	"strings"
 
 	flags "github.com/btcsuite/go-flags"
-	"github.com/decred/dcrd/dcrutil"
+	dcrutil "github.com/hybridnetwork/hxutil"
 )
 
 const (
@@ -67,10 +67,10 @@ type config struct {
 	DBPassword       string  `long:"dbpassword" description:"Password for database connection"`
 	DBPort           string  `long:"dbport" description:"Port for database connection"`
 	DBName           string  `long:"dbname" description:"Name of database"`
-	DcrdHost         string  `long:"dcrdhost" description:"Hostname/IP for dcrd server"`
-	DcrdUser         string  `long:"dcrduser" description:"Username for dcrd server"`
-	DcrdPassword     string  `long:"dcrdpassword" description:"Password for dcrd server"`
-	DcrdCert         string  `long:"dcrdcert" description:"Certificate path for dcrd server"`
+	HxdHost         string  `long:"hxdhost" description:"Hostname/IP for hxd server"`
+	HxdUser         string  `long:"hxduser" description:"Username for hxd server"`
+	HxdPassword     string  `long:"hxdpassword" description:"Password for hxd server"`
+	HxdCert         string  `long:"hxdcert" description:"Certificate path for hxd server"`
 	WalletHost       string  `long:"wallethost" description:"Hostname for wallet server"`
 	WalletUser       string  `long:"walletuser" description:"Username for wallet server"`
 	WalletPassword   string  `long:"walletpassword" description:"Password for wallet server"`
@@ -486,29 +486,29 @@ func loadConfig() (*config, []string, error) {
 		return nil, nil, err
 	}
 
-	if len(cfg.DcrdHost) == 0 {
-		str := "%s: dcrdhost is not set in config"
+	if len(cfg.HxHost) == 0 {
+		str := "%s: hxdhost is not set in config"
 		err := fmt.Errorf(str, funcName)
 		fmt.Fprintln(os.Stderr, err)
 		return nil, nil, err
 	}
 
-	if len(cfg.DcrdCert) == 0 {
-		str := "%s: dcrdcert is not set in config"
+	if len(cfg.HxdCert) == 0 {
+		str := "%s: hxdcert is not set in config"
 		err := fmt.Errorf(str, funcName)
 		fmt.Fprintln(os.Stderr, err)
 		return nil, nil, err
 	}
 
-	if len(cfg.DcrdUser) == 0 {
-		str := "%s: dcrduser is not set in config"
+	if len(cfg.HxdUser) == 0 {
+		str := "%s: hxduser is not set in config"
 		err := fmt.Errorf(str, funcName)
 		fmt.Fprintln(os.Stderr, err)
 		return nil, nil, err
 	}
 
-	if len(cfg.DcrdPassword) == 0 {
-		str := "%s: dcrdpassword is not set in config"
+	if len(cfg.HxdPassword) == 0 {
+		str := "%s: hxdpassword is not set in config"
 		err := fmt.Errorf(str, funcName)
 		fmt.Fprintln(os.Stderr, err)
 		return nil, nil, err
@@ -543,20 +543,20 @@ func loadConfig() (*config, []string, error) {
 	}
 
 	// Add default wallet port for the active network if there's no port specified
-	cfg.DcrdHost = normalizeAddress(cfg.DcrdHost, activeNetParams.DcrdRPCServerPort)
+	cfg.HxdHost = normalizeAddress(cfg.HxdHost, activeNetParams.HxdRPCServerPort)
 	cfg.WalletHost = normalizeAddress(cfg.WalletHost, activeNetParams.WalletRPCServerPort)
 
-	if !fileExists(cfg.DcrdCert) {
-		path := filepath.Join(cfg.HomeDir, cfg.DcrdCert)
+	if !fileExists(cfg.HxdCert) {
+		path := filepath.Join(cfg.HomeDir, cfg.HxdCert)
 		if !fileExists(path) {
-			str := "%s: dcrdcert " + cfg.DcrdCert + " and " +
+			str := "%s: hxdcert " + cfg.HxdCert + " and " +
 				path + " don't exist"
 			err := fmt.Errorf(str, funcName)
 			fmt.Fprintln(os.Stderr, err)
 			return nil, nil, err
 		}
 
-		cfg.DcrdCert = path
+		cfg.HxdCert = path
 	}
 
 	if !fileExists(cfg.WalletCert) {

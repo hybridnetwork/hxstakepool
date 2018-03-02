@@ -18,9 +18,9 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	pb "github.com/decred/dcrstakepool/backend/stakepoold/rpc/stakepoolrpc"
-	"github.com/decred/dcrstakepool/backend/stakepoold/userdata"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	pb "github.com/hybridnetwork/hxstakepool/backend/stakepoold/rpc/stakepoolrpc"
+	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/userdata"
 )
 
 // Public API version constants

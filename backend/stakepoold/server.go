@@ -20,19 +20,19 @@ import (
 	"sync"
 	"time"
 
-	"github.com/decred/dcrd/blockchain/stake"
-	"github.com/decred/dcrd/chaincfg"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrjson"
-	"github.com/decred/dcrd/dcrutil"
-	"github.com/decred/dcrd/hdkeychain"
-	"github.com/decred/dcrd/rpcclient"
-	"github.com/decred/dcrd/wire"
+	"github.com/hybridnetwork/hxd/blockchain/stake"
+	"github.com/hybridnetwork/hxd/chaincfg"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	"github.com/hybridnetwork/hxd/dcrjson"
+	dcrutil "github.com/hybridnetwork/hxutil"
+	"github.com/hybridnetwork/hxd/hdkeychain"
+	rcpclient "github.com/hybridnetwork/hxrpcclient"
+	"github.com/hybridnetwork/hxd/wire"
 
-	"github.com/decred/dcrstakepool/backend/stakepoold/rpc/rpcserver"
-	"github.com/decred/dcrstakepool/backend/stakepoold/userdata"
-	"github.com/decred/dcrwallet/wallet/txrules"
-	"github.com/decred/dcrwallet/wallet/udb"
+	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/rpc/rpcserver"
+	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/userdata"
+	"github.com/hybridnetwork/hxwallet/wallet/txrules"
+	"github.com/hybridnetwork/hxwallet/wallet/udb"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -373,7 +373,7 @@ func runMain() error {
 	// Daemon client connection
 	nodeConn, nodeVer, err := connectNodeRPC(ctx, cfg)
 	if err != nil || nodeConn == nil {
-		log.Infof("Connection to dcrd failed: %v", err)
+		log.Infof("Connection to hxd failed: %v", err)
 		return err
 	}
 	ctx.nodeConnection = nodeConn
@@ -381,10 +381,10 @@ func runMain() error {
 	// Display connected network
 	curnet, err := nodeConn.GetCurrentNet()
 	if err != nil {
-		log.Errorf("Unable to get current network from dcrd: %v", err)
+		log.Errorf("Unable to get current network from hxd: %v", err)
 		return err
 	}
-	log.Infof("Connected to dcrd (JSON-RPC API v%s) on %v",
+	log.Infof("Connected to hxd (JSON-RPC API v%s) on %v",
 		nodeVer.String(), curnet.String())
 
 	// prune save data
