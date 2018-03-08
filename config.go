@@ -22,20 +22,20 @@ import (
 const (
 	defaultBaseURL          = "http://stakepool1.hybrid.network:80"
 	defaultClosePoolMsg     = "The stake pool is temporarily closed to new signups."
-	defaultConfigFilename   = "dcrstakepool.conf"
+	defaultConfigFilename   = "hxstakepool.conf"
 	defaultDataDirname      = "data"
 	defaultLogLevel         = "info"
 	defaultLogDirname       = "logs"
-	defaultLogFilename      = "dcrstakepool.log"
+	defaultLogFilename      = "hxstakepool.log"
 	defaultCookieSecure     = false
 	defaultDBHost           = "localhost"
 	defaultDBName           = "stakepool"
 	defaultDBPort           = "3306"
 	defaultDBUser           = "stakepool"
-	defaultListen           = ":8000"
+	defaultListen           = ":80"
 	defaultPoolEmail        = "admin@example.com"
-	defaultPoolFees         = 7.5
-	defaultPoolLink         = "https://forum.decred.org/threads/rfp-6-setup-and-operate-10-stake-pools.1361/"
+	defaultPoolFees         = 5
+	defaultPoolLink         = "http://hybrid.network"
 	defaultPublicPath       = "public"
 	defaultTemplatePath     = "views"
 	defaultRecaptchaSecret  = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
@@ -46,7 +46,7 @@ const (
 )
 
 var (
-	dcrstakepoolHomeDir = dcrutil.AppDataDir("dcrstakepool", false)
+	dcrstakepoolHomeDir = dcrutil.AppDataDir("hxstakepool", false)
 	defaultConfigFile   = filepath.Join(dcrstakepoolHomeDir, defaultConfigFilename)
 	defaultDataDir      = filepath.Join(dcrstakepoolHomeDir, defaultDataDirname)
 	defaultLogDir       = filepath.Join(dcrstakepoolHomeDir, defaultLogDirname)
