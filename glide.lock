@@ -1,5 +1,5 @@
 hash: 1c3e000be3b58e0ac5af1da319c70732c63ace6fd48cc5b225ac33a02d4b7180
-updated: 2018-02-27T02:07:13.431892609Z
+updated: 2018-03-07T05:19:27.416381606Z
 imports:
 - name: github.com/agl/ed25519
   version: 5312a61534124124185d41f09206b9fef1d88403
@@ -18,9 +18,9 @@ imports:
 - name: github.com/dchest/blake256
   version: dee3fe6eb0e98dc774a94fc231f85baf7c29d360
 - name: github.com/decred/base58
-  version: 229e657bc9be5d592855a910428907f851950ed5
+  version: 56c501706f00d9e1cfacee19a27117e12da24734
 - name: github.com/decred/dcrd
-  version: d19ad36d9b71ea8ac4aae005cb9a28a826071f3e
+  version: c49a9bd2612789ef244db51d96e7529605044fc8
   subpackages:
   - blockchain
   - blockchain/internal/dbnamespace
@@ -56,7 +56,7 @@ imports:
   - stakepooldclient
   - system
 - name: github.com/decred/dcrwallet
-  version: a47b29d4b51906f396080761e13c9af07686b9c0
+  version: c119411c31133ffae565ad93a084fef2cbdc106c
   subpackages:
   - apperrors
   - internal/helpers
@@ -70,7 +70,7 @@ imports:
 - name: github.com/go-gorp/gorp
   version: 4df78490a9aa9a78b9b02b0c913df8dc1954faee
 - name: github.com/go-sql-driver/mysql
-  version: bc14601d1bd56421dd60f561e6052c9ed77f9daf
+  version: 02eb68a684ce8ccb467a8280c5b51232d44643b9
 - name: github.com/golang/protobuf
   version: bbd03ef6da3a115852eaf24c8a1c46aeb39aa175
   subpackages:
@@ -100,7 +100,7 @@ imports:
   - web/middleware
   - web/mutil
 - name: golang.org/x/crypto
-  version: 49796115aa4b964c318aad4f3084fdb41e9aa067
+  version: 85f98707c97e11569271e4d9b3d397e079c4f4d0
   subpackages:
   - bcrypt
   - blowfish
@@ -111,7 +111,7 @@ imports:
   - salsa20/salsa
   - scrypt
 - name: golang.org/x/net
-  version: cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb
+  version: d25186b37f34ebdbbea8f488ef055638dfab272d
   subpackages:
   - context
   - http2
@@ -121,7 +121,7 @@ imports:
   - lex/httplex
   - trace
 - name: golang.org/x/text
-  version: 27420a1a391f5504f73155051cd274311bf70883
+  version: b7ef84aaf62aa3e70962625c80a571ae7c17cb40
   subpackages:
   - secure/bidirule
   - transform
@@ -132,7 +132,7 @@ imports:
   subpackages:
   - cloudsql
 - name: google.golang.org/genproto
-  version: 2b5a72b8730b0b16380010cfe5286c42108d88e7
+  version: df60624c1e9b9d2973e889c7a1cff73155da81c4
   subpackages:
   - googleapis/rpc/status
 - name: google.golang.org/grpc

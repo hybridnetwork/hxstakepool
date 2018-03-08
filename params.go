@@ -30,8 +30,8 @@ type params struct {
 // to emulate the full reference implementation RPC API.
 var mainNetParams = params{
 	Params:                  &chaincfg.MainNetParams,
-	StakepooldRPCServerPort: "9113",
-	WalletRPCServerPort:     "9110",
+	StakepooldRPCServerPort: "29113",
+	WalletRPCServerPort:     "29110",
 }
 
 // testNet2Params contains parameters specific to the test network (version 0)
