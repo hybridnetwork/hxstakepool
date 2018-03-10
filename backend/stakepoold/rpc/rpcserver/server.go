@@ -20,7 +20,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	pb "github.com/decred/dcrstakepool/backend/stakepoold/rpc/stakepoolrpc"
+	pb "github.com/hybridnetwork/hxstakepool/backend/stakepoold/rpc/stakepoolrpc"
 )
 
 // Public API version constants

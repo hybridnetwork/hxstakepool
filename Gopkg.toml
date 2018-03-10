@@ -8,20 +8,20 @@
   name = "github.com/btcsuite/go-flags"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/decred/dcrd"
+  branch = "rc1.0"
+  name = "github.com/hybridnetwork/hxd"
+
+[[constraint]]
+  branch = "rc1.0"
+  name = "github.com/hybridnetwork/hxwallet"
 
 [[constraint]]
   branch = "master"
-  name = "github.com/decred/dcrrpcclient"
+  name = "github.com/hybridnetwork/hxrpcclient"
 
 [[constraint]]
   branch = "master"
-  name = "github.com/decred/dcrutil"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/decred/dcrwallet"
+  name = "github.com/hybridnetwork/hxutil"
 
 [[constraint]]
   branch = "master"
@@ -68,5 +68,5 @@
   name = "golang.org/x/net"
 
 [[constraint]]
+  branch = "v1.7.x"
   name = "google.golang.org/grpc"
-  version = "v1.6.0"

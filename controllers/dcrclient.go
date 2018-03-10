@@ -10,12 +10,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrjson"
-	"github.com/decred/dcrrpcclient"
-	"github.com/decred/dcrstakepool/models"
-	"github.com/decred/dcrutil"
-	"github.com/decred/dcrwallet/wallet/udb"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	"github.com/hybridnetwork/hxd/dcrjson"
+	dcrutil "github.com/hybridnetwork/hxutil"
+	dcrrpcclient "github.com/hybridnetwork/hxrpcclient"
+	"github.com/hybridnetwork/hxstakepool/models"
+	"github.com/hybridnetwork/hxwallet/wallet/udb"
 )
 
 // functionName

@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	pb "github.com/decred/dcrstakepool/backend/stakepoold/rpc/stakepoolrpc"
+	pb "github.com/hybridnetwork/hxstakepool/backend/stakepoold/rpc/stakepoolrpc"
 	"golang.org/x/net/context"
 )
 

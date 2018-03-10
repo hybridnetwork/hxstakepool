@@ -6,11 +6,11 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrrpcclient"
-	"github.com/decred/dcrstakepool/backend/stakepoold/userdata"
-	"github.com/decred/dcrutil"
-	"github.com/decred/dcrwallet/wallet/txrules"
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
+	"github.com/hybridnetwork/hxstakepool/backend/stakepoold/userdata"
+	dcrutil "github.com/hybridnetwork/hxutil"
+	dcrrpcclient "github.com/hybridnetwork/hxrpcclient"
+	"github.com/hybridnetwork/hxwallet/wallet/txrules"
 )
 
 var requiredChainServerAPI = semver{major: 3, minor: 1, patch: 0}

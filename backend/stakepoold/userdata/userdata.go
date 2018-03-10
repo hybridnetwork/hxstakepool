@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"sync"
+
+	"github.com/hybridnetwork/hxd/chaincfg/chainhash"
 )
 
 type DBConfig struct {
