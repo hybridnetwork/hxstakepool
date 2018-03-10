@@ -522,7 +522,7 @@ func (controller *MainController) FeeAddressForUserID(uid int) (dcrutil.Address,
 		return nil, err
 	}
 
-	addr, err := key.Address(controller.params)
+	addr, err := key.Address(controller.params, 0)
 	if err != nil {
 		return nil, err
 	}
@@ -552,7 +552,7 @@ func (controller *MainController) TicketAddressForUserID(uid int) (dcrutil.Addre
 		return nil, err
 	}
 
-	addr, err := key.Address(controller.params)
+	addr, err := key.Address(controller.params, 0)
 	if err != nil {
 		return nil, err
 	}
