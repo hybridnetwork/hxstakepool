@@ -1604,7 +1604,7 @@ func (controller *MainController) Status(c web.C, r *http.Request) (string, int)
 
 	t := controller.GetTemplate(c)
 	c.Env["IsStatus"] = true
-	c.Env["Title"] = "Decred Stake Pool - Status"
+	c.Env["Title"] = "Hx Stake Pool - Status"
 
 	// Set info to be used by admins on /status page.
 	c.Env["WalletInfo"] = walletPageInfo
