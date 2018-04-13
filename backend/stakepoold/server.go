@@ -20,7 +20,6 @@ import (
 	"sync"
 	"time"
 
-<<<<<<< HEAD
     "github.com/hybridnetwork/hxd/blockchain/stake"
     "github.com/hybridnetwork/hxd/chaincfg"
     "github.com/hybridnetwork/hxd/chaincfg/chainhash"
@@ -175,7 +174,7 @@ func deriveChildAddresses(key *hdkeychain.ExtendedKey, startIndex, count uint32,
 		if err != nil {
 			return nil, err
 		}
-		addr, err := child.Address(params)
+		addr, err := child.Address(params,0)
 		if err != nil {
 			return nil, err
 		}

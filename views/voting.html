@@ -1,18 +1,22 @@
 {{define "voting"}}
-<div class="wrapper">
- <div class="row">
-  <div class="col-xs-15 col-md-8 col-lg-8 notication-col center-block">
+<!-- Hero -->
+<section id="hero" class="hero-fullscreen parallax register-page address-page" style="height: 100vh;">
+  <div class="background-image"> <img src="assets/img/backgrounds/bg-1.jpg" alt="#"> </div>
+  <div class="container">
+  
+  <div class="row">
+
+    <div class="col-sm-8 mr-auto ">
     {{range .FlashError}}<div class="well well-notification  orange-notification">{{.}}</div>{{end}}
     {{range .FlashSuccess}}<div class="well well-notification green-notification">{{.}}</div>{{end}}
   </div>
 
-  <div class="col-sm-15 col-md-10 text-left center-block">
-    <h1>Voting Preferences (v{{.VoteVersion}})</h1>
+  <div class="col-sm-8 mr-auto ">
+    <h3>Voting Preferences (v{{.VoteVersion}})</h3>
 
-    <hr />
 
     <!-- AGENDAS -->
-    <h2>Agendas</h2>
+<p><strong>Agendas</strong></p>
     {{with .Agendas}}
     <form method="post" class="form-horizontal">
       {{ range $i, $data := . }}
@@ -40,5 +44,7 @@
   </div>
 
  </div>
-</div>
+  </div>
+</section>
+<!-- End Hero --> 
 {{end}}

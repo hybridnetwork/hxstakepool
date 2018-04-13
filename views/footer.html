@@ -1,16 +1,25 @@
 {{define "footer"}}
-    <footer>
-      <div class="row">
-        <div class="col-sm-15 col-md-6 center-block text-center">
-          <p><a href="https://github.com/hybridnetwork/" target="_blank">Hybrid.Network</a> © 2018</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+<!-- Start Footer -->
+<footer id="footer" class="footer style-1 dark">
+<ul class="footer-icons mr-auto" >
+<li><a href="#"><img src="assets/img/assets/facebook.png" alt="facebook"></a></li>
+<li><a href="#"><img src="assets/img/assets/twitter.png" alt="twitter"></a></li>
+<li><a href="#"><img src="assets/img/assets/googleplus.png" alt="googleplus"></a></li>
+<li><a href="#"><img src="assets/img/assets/pinterest..png" alt="pinterest"></a></li>
+<li><a href="#"><img src="assets/img/assets/share.png" alt="share"></a></li>
+<li><a href="#"><img src="assets/img/assets/rss.png" alt="rss"></a></li>
+</ul>
+ 
+  
+  <a href="https://stakepool.privnet.hybrid.network" target="_blank"><strong>© 2018 Hybrid Network</strong></a>
 
-<script src="assets/js/complete.js"></script>
-{{if .IsTickets }}
-    <script src="assets/js/dataTables.responsive.js"></script>{{end}}
+  <!-- Back To Top Button --> 
+  <span><a class="scroll-top"><i class="ion-chevron-up"></i></a></span> </footer>
+<!-- End Footer --> 
+
+<script src="assets/js/jquery.js?2"></script> 
+<script src="assets/js/init.js?2"></script> 
+<script src="assets/js/scripts.js?2"></script>
 {{if or (.IsPasswordReset) (.IsSignUp) (.IsSettings) }}<script src="https://www.google.com/recaptcha/api.js"></script>{{end}}
 {{if .IsStats }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js" charset="utf-8"></script>
@@ -164,12 +173,12 @@ var pie = new d3pie("test3", {
 			{
 				"label": "Stakepool Ticket Pool",
 				"value": {{ .StakeInfo.Live }},
-				"color": "#73d5f3"
+				"color": "#9b9efd"
 			},
 			{
 				"label": "Network Ticket Pool",
 				"value": {{ .StakeInfo.PoolSize }},
-				"color": "#effafe"
+				"color": "#f291f0"
 			}
 		]
 	},
@@ -221,7 +230,7 @@ var pie = new d3pie("test3", {
 });
 </script>
 {{end}}
-
-  </body>
+</body>
 </html>
+
 {{end}}

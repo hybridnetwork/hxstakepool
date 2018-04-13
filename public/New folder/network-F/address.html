@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hybrid Network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="img/assets/favicon.png" rel="icon" type="image/png">
+<link href="css/init.css" rel="stylesheet" type="text/css">
+<link href="css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,500,600,700" rel="stylesheet">
+</head>
+<body data-fade-in="true">
+<div class="pre-loader">
+  <div></div>
+</div>
+
+<!-- Start Header -->
+<nav class="navbar nav-down" data-fullwidth="true" data-menu-style="transparent" data-animation="shrink"> 
+  <!-- Styles: light, dark, transparent, transparent-to-dark | Animation: hiding, shrink -->
+  <div class="container">
+    <div class="navbar-header">
+      <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button>
+        <a class="navbar-brand to-top" href="#"><img src="img/assets/logo-light.png" class="logo-light" alt="#"><img src="img/assets/logo-dark.png" class="logo-dark" alt="#"></a> </div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <div class="container">
+        <ul class="nav navbar-nav logo-left">          
+          <!-- Each section must have corresponding ID ( #hero -> id="hero" ) -->
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Stats</a></li>
+          <li class="active"><a href="#">Address</a></li>
+          <li ><a href="#">Setting</a></li>  
+	      <li><a href="#">Tickets</a></li>
+          <li><a href="#">Voting</a></li>
+  
+  
+         
+          
+         
+        </ul>
+        
+         <ul class="nav navbar-nav menu-right">          
+          <li><a href="#">Sign In</a></li>
+          <li ><a href="#">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End Header --> 
+
+<!-- Hero -->
+<section id="hero" class="hero-fullscreen parallax register-page address-page">
+  <div class="background-image"> <img src="img/backgrounds/bg-1.jpg" alt="#"> </div>
+  <div class="container">
+  
+  <div class="row">
+   <div class="col-sm-8 mr-auto ">
+   <h3>Address Submitted</h3>   
+<p>   When you submit an address, the stake pool binds that address from your wallet together with an address from the stake pool's voting wallet. This is done by creating a 1-of-2 multisignature script which lets you, the pool, or both parties vote. This "binding" of the wallets means that if you ever delete your current wallet and create a new wallet with a different seed, importing your multisignature script will not work because it contains an address that is not present in your new wallet. Please contact your stake pool administrator or support staff if you need to re-register with a new address from a new wallet.</p>
+
+<p>Your public key address has been accepted and registration is complete. Please contact your stake pool administrator or support staff if you need to re-register with a new address from a new wallet.</p>
+
+<p><strong>Public Key Address:  TkQ3WDa4S8KTTKRFxyFPuwfvwA9BmpGUCeuYBtEHLywoC85Sk97DR</strong></p>
+
+<p>If you wish to verify that this address belongs to your wallet, you may run the following command:</p>
+
+<pre>$ hxctl --testnet --wallet validateaddress TkQ3WDa4S8KTTKRFxyFPuwfvwA9BmpGUCeuYBtEHLywoC85Sk97DR</pre>
+<p>In the result, you will see fields such as "ismine" and "account" if the address is present.</p>
+   
+  </div>
+ </div>
+  </div>
+</section>
+<!-- End Hero --> 
+
+<!-- Start Footer -->
+<footer id="footer" class="footer style-1 dark">
+<ul class="footer-icons mr-auto" >
+<li><a href="#"><img src="img/assets/facebook.png" alt="facebook"></a></li>
+<li><a href="#"><img src="img/assets/twitter.png" alt="twitter"></a></li>
+<li><a href="#"><img src="img/assets/googleplus.png" alt="googleplus"></a></li>
+<li><a href="#"><img src="img/assets/pinterest..png" alt="pinterest"></a></li>
+<li><a href="#"><img src="img/assets/share.png" alt="share"></a></li>
+<li><a href="#"><img src="img/assets/rss.png" alt="rss"></a></li>
+</ul>
+ 
+  
+  <a href="#" target="_blank"><strong>© 2018 Hybrid Network</strong></a>
+
+  <!-- Back To Top Button --> 
+  <span><a class="scroll-top"><i class="ion-chevron-up"></i></a></span> </footer>
+<!-- End Footer --> 
+
+<script src="js/jquery.js"></script> 
+<script src="js/init.js"></script> 
+<script src="js/scripts.js"></script>
+</body>
+</html>

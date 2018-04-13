@@ -1,31 +1,118 @@
 {{define "home"}}
-<div class="wrapper">
-    <div class="row main-row">
- <div class="col-xs-15 col-md-8 col-lg-8 notication-col center-block">
-    </div>
-    <div class="col-sm-12 col-md-10 col-lg-8 center-block">
-       <h1 class="text-center">HX Stake Pool Overview</h1>
-       <p>A stake pool is used to delegate your voting powers to a third party (the pool). The pool <b>cannot</b> steal your funds.</p>
-       <p>Participating in a stake pool is perfect for people who wish to take part in HX's proof of stake voting but can't due to:</p>
-       <ul><li>Not wanting to keep a constantly unlocked wallet</li>
-       <li>Lack of a realible/low latency Internet connection</li></ul>
-       <p>The source code is available at <a href="https://github.com/hybridnetwork/hxstakepool" target="_blank">GitHub</a>.</p>
-       <hr>
-       <ul>
-         <li class="li-heading">Pool Information</li>
-         <li>Network: {{.Network}}</li>
-         <li>Pool Fees: {{.PoolFees}}%</li>
-         <li>Support Email: <a href="mailto:{{.PoolEmail}}">{{.PoolEmail}}</a></li>
-         <li>Support Link: <a href="{{.PoolLink}}" target="_blank">{{.PoolLink}}</a></li>
-       </ul>
-    </div>   
-    </div>
-	{{if not .User}}
-     <div class="row row-button">
-      <div class="col-sm-15 col-md-6 center-block text-center">
-        <a href="/signup" class="btn btn-primary" role="button">Sign Up</a>
+
+
+
+<!-- Hero -->
+<section id="hero" class="hero-fullscreen parallax">
+  <div class="background-image"> <img src="assets/img/backgrounds/bg-1.jpg" alt="#"> </div>
+    {{if not .User}}
+  <div class="container">
+  
+  <div class="row">
+   <div class="col-sm-11 mr-auto">
+      
+     
+    <div class="row">
+      <div class="col-sm-7 hero-left">
+      <h2>Decred</h2>
+      <h1>Proof-Of-Stake<br>Pool</h1>
+      <p>
+      Total Profit of Our Users
+      </p>
+      <p>
+      <strong>183688 <span>DCR</span></strong>
+      </p>
+      <p>
+      Mined By 2297 Miners
+      </p>
+      
+      <a href="/signup" class="btn btn-primary">Sign Up Now</a>
+      </div>
+      <div class="col-sm-5">
+      
+      <div class="login-box pull-right">
+      <h6>Login <span>Here</span></h6>
+      <form method="post" class="form-horizontal">
+      <div class="login-body">
+      
+      <ul class="login-form">
+      <li><input type="email" class="form-control" placeholder="Email address" name="email" id="email"></li>
+      <li><input type="password" class="form-control" placeholder="Password"  name="password"  id="password"></li>
+      <li>Forgot your password? <a href="/passwordreset">Click here</a></li>
+      
+      
+      </ul>
+      
+      
+      </div>
+      
+      <div class="login-footer"><input  id="signin" name="signin" type="submit" class="btn btn-danger" value="Login"></div>
+      <input type="hidden" name="{{.CsrfKey}}" value={{.CsrfToken}}> 
+      </form>
+      
+      </div>
+      
       </div>
     </div>
-	{{end}}
-</div>
+  </div>
+ </div>
+  </div>
+ {{end}}
+
+</section>
+<!-- End Hero --> 
+
+<!-- About Us -->
+<section  class="pt80 pb70">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center pb20">
+        <h2>HX Stake Pool Overview<span class="title-separator"></span>
+        </h2>
+        <br>
+        <br>
+       
+       <div class="row">
+       <div class="col-md-8 text-left padR20">
+       <h5>HX Stake Pool</h5>
+       
+       <p>A stake pool is used to delegate your voting powers to a third party(the pool).
+The pool cannot steal your funds.<br>
+Participating in a stake pool perfect for people who wish to take part in HX's proof of stake voting but can't due to:</p>
+<br>
+<p>Not wanthing to keep a constantly unlocked wallet<br> Lack of a realible/low latency internet connection</p>
+<br>
+<p>The source code is avaliable at <a href="https://github.com/hybridnetwork/hxstakepool">GitHub</a></p>
+
+
+
+       
+       </div>
+       
+       <div class="col-md-4 text-left">
+       <div class="pool-box">
+       <h4>Poll Information</h4>
+       
+<p>Network: {{.Network}}<br>
+Pool Fees:{{.PoolFees}}%<br>
+Support Email: <a href="mailto:{{.PoolEmail}}">{{.PoolEmail}}</a><br>
+Support Links: <a href="{{.PoolLink}}" target="_blank">{{.PoolLink}}</a></p>
+
+<a href="#" class="btn btn-danger pt20">Know More</a>
+       
+       </div>
+       
+       </div>
+       
+       </div>
+       
+      </div>
+      
+      
+      
+      
+    </div>
+  </div>
+</section>
+
 {{end}}

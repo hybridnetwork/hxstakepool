@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hybrid Network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="img/assets/favicon.png" rel="icon" type="image/png">
+<link href="css/init.css" rel="stylesheet" type="text/css">
+<link href="css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,500,600,700" rel="stylesheet">
+</head>
+<body data-fade-in="true">
+<div class="pre-loader">
+  <div></div>
+</div>
+
+<!-- Start Header -->
+<nav class="navbar nav-down" data-fullwidth="true" data-menu-style="transparent" data-animation="shrink"> 
+  <!-- Styles: light, dark, transparent, transparent-to-dark | Animation: hiding, shrink -->
+  <div class="container">
+    <div class="navbar-header">
+      <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button>
+        <a class="navbar-brand to-top" href="#"><img src="img/assets/logo-light.png" class="logo-light" alt="#"><img src="img/assets/logo-dark.png" class="logo-dark" alt="#"></a> </div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <div class="container">
+        <ul class="nav navbar-nav logo-left">          
+          <!-- Each section must have corresponding ID ( #hero -> id="hero" ) -->
+          <li><a href="#">Home</a></li>
+          <li class="active"><a href="#">Stats</a></li>
+          <li><a href="#">Address</a></li>
+          <li ><a href="#">Setting</a></li>  
+	      <li><a href="#">Tickets</a></li>
+          <li><a href="#">Voting</a></li>
+  
+  
+         
+          
+         
+        </ul>
+        
+         <ul class="nav navbar-nav menu-right">          
+          <li><a href="#">Sign In</a></li>
+          <li ><a href="#">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End Header --> 
+
+<!-- Hero -->
+<section id="hero" class="hero-fullscreen parallax register-page stats-page">
+  <div class="background-image"> <img src="img/backgrounds/bg-1.jpg" alt="#"> </div>
+  <div class="container">
+  
+  <div class="row">
+   <div class="col-sm-10 mr-auto">
+      
+     
+    <div class="row">
+      
+      <div class="col-sm-11 mr-auto">
+      
+      
+       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        Ticket Information
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                <h4>P2SH Address:</h4>
+                <pre>TcqS2uV3cKhtu14oHgsY5taPVVogNScaCL2</pre>
+                 <hr>
+                 <h4>Redeem Script:</h4>
+                <pre>5121036cfe5d2fd9bd29b5f7b7c0ca56e62398c7a9f55bb36d0776a01b7a4d513422ed2103122fae5cc91b1dae31156e78ae04340aef48fa810eb180bcde96f67acf06f77152ae</pre>
+                 
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                         Ticket Instructions
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                   <h4> Step 1</h4>
+
+<p>The official HX GUI wallet is currently under development. We will be working on a comprehensive guide after development.</p>
+
+<p>It is recommended to use the latest versions of the hxwallet software before starting. </p>
+
+<h4>Step 2</h4>
+
+<p>Your multisignature script for delegating votes has been generated. Please first import it locally into your wallet using hxctl for safe keeping, so you can recover your funds and vote in the unlikely event of a pool failure:</p>
+
+<p><strong>hxctl --wallet importscript "script"</strong></p>
+
+<p>For example:</p>
+<pre>$ hxctl --testnet --wallet importscript 5121036cfe5d2fd9bd29b5f7b7c0ca56e62398c7a9f55bb36d0776a01b7a4d513422ed2103122fae5cc91b1dae31156e78ae04340aef48fa810eb180bcde96f67acf06f77152ae</pre>
+
+<p>After successfully importing the script into your wallet, you may purchase tickets with voting rights delegated to the pool in either of two ways:</p>
+
+<h4>Step 3</h4>
+
+<p><strong>Option A - hxwallet - Automatic purchasing</strong></p>
+
+<p>Stop hxwallet if it is currently running and add the following to hxwallet.conf:</p>
+
+<pre>[Application Options]
+enableticketbuyer=true
+pooladdress=TsWUnvx7mJmWCA9WteeZyyrGnKz7ghH88mT
+poolfees=5
+ticketaddress=TcqS2uV3cKhtu14oHgsY5taPVVogNScaCL2
+[Ticket Buyer Options]
+ticketbuyer.maxpriceabsolute=100
+</pre>
+
+<p>Unlock hxwallet and it will automatically purchase stake tickets delegated to the pool address.</p>
+
+<p><strong>Option B - hxwallet - Manual purchasing</strong></p>
+
+<p>Start a wallet with funds available and manually purchase tickets with the following command using hxctl:</p>
+
+<p><strong>hxctl --testnet --wallet purchaseticket "fromaccount" spendlimit minconf ticketaddress numtickets poolfeeaddress poolfeeamt</strong></p>
+<pre>hxctl --testnet --wallet purchaseticket "default" 100 1 TcqS2uV3cKhtu14oHgsY5taPVVogNScaCL2 1 TsWUnvx7mJmWCA9WteeZyyrGnKz7ghH88mT 5</pre>
+
+<p>Will purchase a ticket delegated to the the multisig address which allows either your or the pool to vote when the ticket is called. This uses funds from the default account only if the current network price for a ticket is less than 100.0 coins.</p>
+
+<h4>Step 4 (Optional)</h4>
+
+<p><strong>Voting</strong></p>
+
+<p>The preferences you set on this stake pool's <a href="#">voting page</a> only affect the stake pool's voting wallets and not your own.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                       Live/Immature
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                   
+                   <table id="example" class="table table-striped table-condensed" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Ticket</th>
+                <th>Ticket Height</th>
+            </tr>
+        </thead>
+        <tbody>
+			
+			<tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                </tbody>
+        <tfoot>
+				<tr><th>Ticket</th><th>TicketHeight</th></tr>
+			</tfoot>
+    </table>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                      Voted Tickets
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                   <table id="example1" class="table table-striped table-condensed" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Ticket</th>
+                <th>Ticket Height</th>
+            </tr>
+        </thead>
+        <tbody>
+			
+			<tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                </tbody>
+        <tfoot>
+				<tr><th>Ticket</th><th>TicketHeight</th></tr>
+			</tfoot>
+    </table>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                       Missed Tickets
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+               
+                  <div class="panel-body">
+                   <table id="example2" class="table table-striped table-condensed" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Ticket</th>
+                <th>Ticket Height</th>
+            </tr>
+        </thead>
+        <tbody>
+			
+			<tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                
+                <tr>
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453" target="_blank">0086966060acfd2080199b3a3f51cd16fa405126c4d7e3f41ba82ac65226e453</a></td>
+				<td>3423</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7" target="_blank">017f6176a0d0fea2482c4ccbf0783d3cdde353ee41ffc739574c3c96aa589ac7</a></td>
+				<td>5282</td>
+				</tr>
+                <tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343" target="_blank">030eb0391bce9293b14efd7776b5e5d00e13d2b0268327522503146f8e97d343</a></td>
+				<td>3584</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3" target="_blank">05924aea7d603f2d7edd0179be41b6160735c9d8fe520a4773dee95fcba9d8b3</a></td>
+				<td>3241</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81" target="_blank">066f8b43d402fe58fbabe349763db8aad9834c981b55bf82b78c51f8ff6aff81</a></td>
+				<td>4660</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437" target="_blank">06ed8c39f8a02d971ab3a9b3c1ef9fafc10d1abfb216fa77eeef47f2806d2437</a></td>
+				<td>4619</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f" target="_blank">07036a246fd4b4bd0a2e4da9e2d8d7cf479a958d444879a062bc86d2ca956f6f</a></td>
+				<td>3857</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546" target="_blank">07349e508c51abc090844cc1fc89e5cc794ab9cfea71e54fc8ceb9ce3d0b5546</a></td>
+				<td>5203</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6" target="_blank">0754d39bbbaf12a07d64763548db0a653bcfc453debf8912acd5f0499e830fb6</a></td>
+				<td>5246</td>
+				</tr><tr >
+				<td ><a href="http://explorer1.testnet.hybrid.network/tx/0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9" target="_blank">0870689ed96d54faa33b90c6760684c89bf04d9b204dd03e90dad4b94d69cde9</a></td>
+				<td>3958</td>
+				</tr>
+                </tbody>
+        <tfoot>
+				<tr><th>Ticket</th><th>TicketHeight</th></tr>
+			</tfoot>
+    </table>
+                </div>
+           
+        </div>
+        
+        
+        
+        
+
+    </div><!-- panel-group -->
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      </div>
+      
+    </div>
+    
+          
+      
+    </div>
+  </div>
+ </div>
+  </div>
+</section>
+<!-- End Hero --> 
+
+<!-- Start Footer -->
+<footer id="footer" class="footer style-1 dark">
+<ul class="footer-icons mr-auto" >
+<li><a href="#"><img src="img/assets/facebook.png" alt="facebook"></a></li>
+<li><a href="#"><img src="img/assets/twitter.png" alt="twitter"></a></li>
+<li><a href="#"><img src="img/assets/googleplus.png" alt="googleplus"></a></li>
+<li><a href="#"><img src="img/assets/pinterest..png" alt="pinterest"></a></li>
+<li><a href="#"><img src="img/assets/share.png" alt="share"></a></li>
+<li><a href="#"><img src="img/assets/rss.png" alt="rss"></a></li>
+</ul>
+ 
+  
+  <a href="#" target="_blank"><strong>© 2018 Hybrid Network</strong></a>
+
+  <!-- Back To Top Button --> 
+  <span><a class="scroll-top"><i class="ion-chevron-up"></i></a></span> </footer>
+<!-- End Footer --> 
+
+<script src="js/jquery.js"></script> 
+<script src="js/init.js"></script> 
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script> 
+
+
+<script>
+$(document).ready(function() {
+   		 $('#example').DataTable();
+		  $('#example1').DataTable();
+		  $('#example2').DataTable();
+}(jQuery));
+</script>
+<script src="js/scripts.js"></script>
+
+
+</body>
+</html>
